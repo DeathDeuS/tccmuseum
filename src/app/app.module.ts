@@ -4,20 +4,24 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
+import { ScannerPage } from '../pages/scanner/scanner';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { SQLitePage } from '../pages/sqlite/sqlite';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { SQLite } from '@ionic-native/sqlite';
 
 @NgModule({
   declarations: [
     MyApp,
     AboutPage,
-    ContactPage,
+    ScannerPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    SQLitePage,
   ],
   imports: [
     BrowserModule,
@@ -27,13 +31,16 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   entryComponents: [
     MyApp,
     AboutPage,
-    ContactPage,
+    ScannerPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    SQLitePage,
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    BarcodeScanner, 
+    SQLite, 
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
