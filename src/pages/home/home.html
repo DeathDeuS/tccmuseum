@@ -1,13 +1,27 @@
+<div id="custom-overlay" [style.display]="splash ? 'flex': 'none'">
+  <div class="flb">
+    <div class="Aligner-item Aligner-item--top"></div>
+    <h1>TCC MUSEUM</h1>
+    <div class="Aligner-item Aligner-item--bottom"></div>
+  </div>
+</div>
+
 <ion-header>
   <ion-navbar>
-    <ion-title>OEUVRES : /</ion-title>
+    <ion-title>OEUVRES : {{nb_checked}}/{{total}}</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <div>
-    <ion-list>
-        <ion-item></ion-item>
+<ion-content >
+  <div >
+    <ion-list *ngFor="let events of event">
+        <ion-item>
+          <ion-card>
+           <img src="../../assets/imgs/{{events.qrcode}}.jpg" />  
+          <h2>{{events.name}}</h2>
+          <p>{{events.qrcode}}</p>
+          </ion-card>
+        </ion-item>
 
     </ion-list>
   </div>
